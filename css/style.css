@@ -1,0 +1,180 @@
+/* ================================
+   🌈 VARIÁVEIS DE DESIGN SYSTEM
+================================ */
+:root {
+  /* 🎨 Paleta de Cores */
+  --cor-primaria: #0066cc;
+  --cor-secundaria: #00b3b3;
+  --cor-acento: #ffcc00;
+  --cor-sucesso: #2ecc71;
+  --cor-erro: #e74c3c;
+  --cor-alerta: #f1c40f;
+  --cor-clara: #f9f9f9;
+  --cor-escura: #222;
+
+  /* 🧱 Tipografia */
+  --fonte-principal: "Poppins", sans-serif;
+  --fonte-secundaria: "Open Sans", sans-serif;
+
+  /* 🔠 Tamanhos de Fonte */
+  --texto-xs: 12px;
+  --texto-sm: 14px;
+  --texto-md: 16px;
+  --texto-lg: 20px;
+  --texto-xl: 28px;
+
+  /* 📏 Espaçamentos (sistema 8px) */
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+}
+
+/* ================================
+   ✨ ESTILO GLOBAL
+================================ */
+body {
+  font-family: var(--fonte-principal);
+  color: var(--cor-escura);
+  background-color: var(--cor-clara);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ================================
+   🧭 CABEÇALHO E NAVEGAÇÃO
+================================ */
+header {
+  background-color: var(--cor-primaria);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--esp-2) var(--esp-3);
+}
+
+header img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--esp-2);
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--cor-acento);
+}
+
+/* ================================
+   🧱 SEÇÕES E CONTEÚDO
+================================ */
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--esp-3);
+  padding: var(--esp-4);
+}
+
+section {
+  grid-column: span 12;
+  background: white;
+  border-radius: 12px;
+  padding: var(--esp-3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   💳 CARDS DE PROJETOS
+================================ */
+section img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ================================
+   🖱️ BOTÕES
+================================ */
+button {
+  background-color: var(--cor-secundaria);
+  color: white;
+  border: none;
+  padding: var(--esp-2) var(--esp-3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: var(--texto-md);
+}
+
+button:hover {
+  background-color: var(--cor-acento);
+  color: var(--cor-escura);
+}
+
+/* ================================
+   📝 FORMULÁRIOS
+================================ */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+}
+
+input, select {
+  padding: var(--esp-1);
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: var(--texto-sm);
+}
+
+/* ================================
+   📱 RESPONSIVIDADE (5 BREAKPOINTS)
+================================ */
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  main {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: var(--texto-sm);
+  }
+}
