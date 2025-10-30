@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visão Solidária - Início</title>
     <link rel="stylesheet" href="css/style.css">
+    <button id="modoAcessivel" aria-label="Alternar modo escuro/claro">🌙 Modo Escuro</button>
 </head>
 <body>
     <header>
@@ -18,7 +19,7 @@
         </nav>
     </header>
 
-    <main>
+    <main tabindex="-1">
         <section>
             <h1>Bem-vindo à Visão Solidária</h1>
             <p>Nossa missão é levar óculos a quem precisa, transformando vidas através da visão.</p>
@@ -42,30 +43,8 @@
     <footer>
         <p>&copy; 2025 Visão Solidária. Todos os direitos reservados.</p>
     </footer>
+    
     <script type="module" src="js/app.js"></script>
-    <script>
-  const botao = document.getElementById("modoAcessivel");
-
-  // 🔹 Verifica se o usuário já tem preferência salva
-  if (localStorage.getItem("modo") === "escuro") {
-    document.body.classList.add("modo-escuro");
-    botao.textContent = "☀️ Modo Claro";
-  }
-
-  // 🔹 Alterna entre modo claro e escuro
-  botao.addEventListener("click", () => {
-    document.body.classList.toggle("modo-escuro");
-
-    if (document.body.classList.contains("modo-escuro")) {
-      botao.textContent = "☀️ Modo Claro";
-      localStorage.setItem("modo", "escuro");
-    } else {
-      botao.textContent = "🌙 Modo Escuro";
-      localStorage.setItem("modo", "claro");
-    }
-  });
-</script>
-
-
-</body>
+    
+    </body>
 </html>
