@@ -178,3 +178,57 @@ input, select {
     font-size: var(--texto-sm);
   }
 }
+
+
+/* 🌙 MODO ESCURO */
+body.modo-escuro {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.modo-escuro header,
+body.modo-escuro footer {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+body.modo-escuro section {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+/* Links e botões no modo escuro */
+body.modo-escuro a {
+  color: #66b3ff;
+}
+
+body.modo-escuro button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+body.modo-escuro button:hover {
+  background-color: #666;
+}
+
+/* 🌞 Botão fixo */
+#modoAcessivel {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: var(--cor-secundaria);
+  color: white;
+  border: none;
+  padding: var(--esp-2) var(--esp-3);
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+#modoAcessivel:hover {
+  background-color: var(--cor-acento);
+  color: var(--cor-escura);
+}
